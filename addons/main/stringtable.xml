@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="mod-template">
+    <Package name="Main">
+        <Key ID="STR_mod_author">
+            <English>kolmipilot</English>
+        </Key>
+        <Key ID="STR_mod_URL">
+            <English>https://github.com/kolmipilot/signals</English>
+        </Key>
+    </Package>
+</Project>

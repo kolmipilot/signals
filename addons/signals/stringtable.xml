@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="kolmi">
+    <Package name="signals">
+        <Container name="common">
+            <Key ID="STR_signals_author">
+                <Original>kolmipilot</Original>
+                <English>kolmipilot</English>
+            </Key>
+        </Container>
+        <Container name="CBA_Settings_Categories">
+            <Key ID="STR_kolmi_signals_set_cat_main">
+                <Original>kolmi - signals</Original>
+                <English>kolmi - signals</English>
+            </Key>
+        </Container>
+        <Container name="CBA_Settings">
+            <Key ID="STR_kolmi_signals_setting_string_enable">
+                <Original>Enable</Original>
+            </Key>
+            <Key ID="STR_kolmi_signals_setting_string_enable_desc">
+                <English>Will Enable the signals System.</English>
+            </Key>
+            <Key ID="STR_kolmi_signals_setting_string_DISTANCE">
+                <English>Distance at signals wll be shown</English>
+            </Key>
+            <Key ID="STR_kolmi_signals_setting_string_DISTANCE_DISC">
+                <English>Distance at signals wll be shown</English>
+            </Key>
+        </Container>
+        
+    </Package>
+</Project>
+
