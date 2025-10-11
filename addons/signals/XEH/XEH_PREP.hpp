@@ -2,7 +2,7 @@ PREP(init);
 PREP(Disperse);
 PREP(Rally);
 PREP(FollowMe);
-PREP(Rush);
+PREP(Attack);
 PREP(Wedge);
 PREP(Vee);
 PREP(Line);

@@ -2,7 +2,7 @@
 
 /*
 * Author: kolmipilot
-* Halt hand signal
+* HOLD hand signal
 *
 * Arguments:
 * 0 - _unit;
@@ -18,7 +18,7 @@
 params ["_player"];
 
 private _playerName = [_player, false, true] call ace_common_fnc_getName;  
-private _text = format["HALT <br/><t size='0.7'>%1</t>", _playerName];
+private _text = format["HOLD <br/><t size='0.7'>%1</t>", _playerName];
 
 private _nearPlayers = allPlayers select {
     _x distance _player <= GVAR(signalDistance)

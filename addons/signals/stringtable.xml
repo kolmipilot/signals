@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="kolmi">
     <Package name="signals">
-        <Container name="common">
-            <Key ID="STR_signals_author">
-                <Original>kolmipilot</Original>
-                <English>kolmipilot</English>
-            </Key>
-        </Container>
         <Container name="CBA_Settings_Categories">
             <Key ID="STR_kolmi_signals_set_cat_main">
                 <Original>kolmi - signals</Original>

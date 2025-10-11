@@ -25,5 +25,7 @@ private _nearPlayers = allPlayers select {
 };
 
 {
-    [_text, QPATHTOF(img\SignalRush.paa), [1, 1, 1], _x, 2] call ace_common_fnc_displayTextPicture;
+    [_text, QPATHTOF(img\SignalAttack.paa), [1, 1, 1], _x, 2] call ace_common_fnc_displayTextPicture;
 } forEach _nearPlayers;
+
+[ARR_2(_player,selectRandom [ARR_2('gestureGo','gestureGoB')])] call ace_common_fnc_doGesture;

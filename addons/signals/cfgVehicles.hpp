@@ -3,113 +3,96 @@ class CfgVehicles
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
-            class Player_signals {
+            class ACE_gestures {
                 displayName = "Signals";
-                condition = QGVAR(enableSignals);
-                statement = "hintSilent ''";
-                icon = QPATHTOF(img\SignalIcon256x256.paa);
-                priority = 2.6;
-                showDisabled = 0;
                 class signal_Disperse {
                     displayName = "Disperse";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
                     statement = QUOTE(_this call FUNC(Disperse));
                     showDisabled = 0;
                     icon = QPATHTOF(img\SignalDisperse.paa);
                 };
-                class signal_Rally {
+                class ace_gestures_Regroup {
                     displayName = "Rally";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
-                    statement = QUOTE(_this call FUNC(Rally));
+                    statement = QUOTE(_this call FUNC(Rally); QUOTE("ace_gestures_regroup") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
                     icon = QPATHTOF(img\SignalRally.paa);
                 };
-                class signal_FollowMe {
+                class ace_gestures_Follow {
                     displayName = "Follow Me";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
                     statement = QUOTE(_this call FUNC(FollowMe));
                     showDisabled = 0;
                     icon = QPATHTOF(img\SignalRally.paa);
                 };
-                class signal_Rush {
-                    displayName = "Rush";
+                class ace_gestures_Go {
+                    displayName = "Attack";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
-                    statement = QUOTE(_this call FUNC(Rush));
+                    statement = QUOTE(_this call FUNC(Attack));
                     showDisabled = 0;
-                    icon = QPATHTOF(img\SignalRush.paa);
+                    icon = QPATHTOF(img\SignalAttack.paa);
                 };
-                class signal_engage{
+                class ace_gestures_Engage{
                     displayName = "Engage";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
-                    statement = QUOTE(_this call FUNC(Engage));
+                    statement = QUOTE(_this call FUNC(Engage); QUOTE("ace_gestures_engage") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
                     //icon = QPATHTOF(img\SignalEngage.paa);
                 };
-                class signal_HoldFire{
-                    displayName = "Hold Fire";
+                class ace_gestures_CeaseFire{
+                    displayName = "Cease Fire";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
                     statement = QUOTE(_this call FUNC(HoldFire));
                     showDisabled = 0;
                     //icon = QPATHTOF(img\SignalHoldFire.paa);
                 };
-                class signal_contact{
+           /*     class signal_contact {
                     displayName = "Contact";
                     condition = QGVAR(enableSignals);
                     statement = "hintSilent ''";
                     priority = 2.6;
                     showDisabled = 0;
-                    class signal_ContactLeft{
+                    class signal_ContactLeft {
                         displayName = "Contact Left";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(ContactLeft));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\SignalContactLeft.paa);
                     };
-                    class signal_ContactRight{
+                    class signal_ContactRight {
                         displayName = "Contact Right";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(ContactRight));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\SignalContactRight.paa);
                     };
-                };
-                class signal_EnemySpotted{
+                };*/
+                class ace_gestures_Point{
                     displayName = "Enemy Spotted";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
-                    statement = QUOTE(_this call FUNC(EnemySpotted));
+                    statement = QUOTE(_this call FUNC(EnemySpotted); QUOTE("ace_gestures_point") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
                     //icon = QPATHTOF(img\SignalEnemySpotted.paa);
                 };
-                class signal_TakeCover{
+                class ace_gestures_Cover{
                     displayName = "Take Cover";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
-                    statement = QUOTE(_this call FUNC(TakeCover));
+                    statement = QUOTE(_this call FUNC(TakeCover); QUOTE("ace_gestures_cover") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
                     //icon = QPATHTOF(img\SignalTakeCover.paa);
                 };
-                class signal_Halt{
-                    displayName = "Halt";
+                class ace_gestures_Hold{
+                    displayName = "Hold";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
-                    statement = QUOTE(_this call FUNC(Halt));
+                    statement = QUOTE(_this call FUNC(Halt); QUOTE("ace_gestures_hold") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
                     //icon = QPATHTOF(img\SignalHalt.paa);
                 };
-                class signal_Freeze{
+                class ace_gestures_Freeze{
                     displayName = "Freeze";
                     condition = "true";
-                    exceptions[] = {"isNotSwimming"};
-                    statement = QUOTE(_this call FUNC(Freeze));
+                    statement = QUOTE(_this call FUNC(Freeze); QUOTE("ace_gestures_freeze") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
                     //icon = QPATHTOF(img\SignalFreeze.paa);
                 };
@@ -123,7 +106,6 @@ class CfgVehicles
                     class formation_Wedge{
                         displayName = "Wedge";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(Wedge));
                         showDisabled = 0;
                         icon = QPATHTOF(img\FormationWedge.paa);
@@ -131,7 +113,6 @@ class CfgVehicles
                     class formation_Vee{
                         displayName = "Vee";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(Vee));
                         showDisabled = 0;
                         icon = QPATHTOF(img\FormationVee.paa);
@@ -139,7 +120,6 @@ class CfgVehicles
                     class formation_Line{
                         displayName = "Line";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(Line));
                         showDisabled = 0;
                         icon = QPATHTOF(img\FormationLine.paa);
@@ -147,7 +127,6 @@ class CfgVehicles
                     class formation_EchelonL{
                         displayName = "Echelon Left";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(EchelonL));
                         showDisabled = 0;
                         icon = QPATHTOF(img\FormationEchelonL.paa);
@@ -155,7 +134,6 @@ class CfgVehicles
                     class formation_EchelonR{
                         displayName = "Echelon Right";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(EchelonR));
                         showDisabled = 0;
                         icon = QPATHTOF(img\FormationEchelonR.paa);
@@ -163,7 +141,6 @@ class CfgVehicles
                     class formation_Staggered_Column{
                         displayName = "Staggered Column";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(StaggeredColumn));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\FormationStaggeredColumn.paa);
@@ -171,7 +148,6 @@ class CfgVehicles
                     class formation_Column{
                         displayName = "Column";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(Column));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\FormationColumn.paa);
@@ -179,7 +155,6 @@ class CfgVehicles
                     class fromation_Herringbone{
                         displayName = "Herringbone";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(Herringbone));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\FormationHerringbone.paa);
@@ -195,7 +170,6 @@ class CfgVehicles
                     class forward_rto{
                         displayName = "RTO forward";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(RTOForward));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\RTOForward.paa);
@@ -203,7 +177,6 @@ class CfgVehicles
                     class forward_PL{
                         displayName = "PL forward";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(PLForward));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\PLForward.paa);
@@ -211,7 +184,6 @@ class CfgVehicles
                     class forward_PSgt{
                         displayName = "PSG forward";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(PSgtForward));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\PSgtForward.paa);
@@ -219,11 +191,19 @@ class CfgVehicles
                     class forward_medic{
                         displayName = "Medic forward";
                         condition = "true";
-                        exceptions[] = {"isNotSwimming"};
                         statement = QUOTE(_this call FUNC(MedicForward));
                         showDisabled = 0;
                         //icon = QPATHTOF(img\MedicForward.paa);
                     };
+                };
+                class ace_gestures_Advance{
+                    condition = "false";
+                };
+                class ace_gestures_Up{
+                    condition = "false";
+                };
+                class ace_gestures_Forward{
+                    condition = "false";
                 };
             };
         };
