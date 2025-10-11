@@ -10,7 +10,7 @@ Feel free to create a PR if you see something missing!
   - Has a set of my personal macros. Some are somewhat duplicate from cba, but i already got used to them. Feel free to use them or not.
 
 - TEMPLATE ADDON Folder
-  - Basic CfgFunctions Setup
+  - Basic CfgFunction Setup
     - example `fn_example.sqf` function
   - Basic CBA XEH Setup
     - example `XEH_preInit.sqf` with CBA Addon Option Template
