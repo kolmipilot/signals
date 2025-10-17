@@ -25,7 +25,7 @@ private _nearPlayers = allPlayers select {
 };
 
 {
-    [_text, QPATHTOF(img\SignalDisperse.paa), [1, 1, 1], _x, 2] call ace_common_fnc_displayTextPicture;
+    [_text, QPATHTOF(img\SignalHoldFire.paa), [1, 1, 1], _x, 2] call ace_common_fnc_displayTextPicture;
 } forEach _nearPlayers;
 
 [ARR_2(_player,'gestureCeaseFire')] call ace_common_fnc_doGesture;

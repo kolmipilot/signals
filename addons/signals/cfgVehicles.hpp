@@ -24,7 +24,7 @@ class CfgVehicles
                     condition = "true";
                     statement = QUOTE(_this call FUNC(FollowMe));
                     showDisabled = 0;
-                    icon = QPATHTOF(img\SignalRally.paa);
+                    icon = QPATHTOF(img\SignalFollow.paa);
                 };
                 class ace_gestures_Go {
                     displayName = "Attack";
@@ -38,14 +38,14 @@ class CfgVehicles
                     condition = "true";
                     statement = QUOTE(_this call FUNC(Engage); QUOTE("ace_gestures_engage") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
-                    //icon = QPATHTOF(img\SignalEngage.paa);
+                    icon = QPATHTOF(img\SignalEngage.paa);
                 };
                 class ace_gestures_CeaseFire{
                     displayName = "Cease Fire";
                     condition = "true";
                     statement = QUOTE(_this call FUNC(HoldFire));
                     showDisabled = 0;
-                    //icon = QPATHTOF(img\SignalHoldFire.paa);
+                    icon = QPATHTOF(img\SignalHoldFire.paa);
                 };
            /*     class signal_contact {
                     displayName = "Contact";
@@ -73,28 +73,28 @@ class CfgVehicles
                     condition = "true";
                     statement = QUOTE(_this call FUNC(EnemySpotted); QUOTE("ace_gestures_point") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
-                    //icon = QPATHTOF(img\SignalEnemySpotted.paa);
+                    icon = QPATHTOF(img\SignalEnemySpotted.paa);
                 };
                 class ace_gestures_Cover{
                     displayName = "Take Cover";
                     condition = "true";
                     statement = QUOTE(_this call FUNC(TakeCover); QUOTE("ace_gestures_cover") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
-                    //icon = QPATHTOF(img\SignalTakeCover.paa);
+                    icon = QPATHTOF(img\SignalTakeCover.paa);
                 };
                 class ace_gestures_Hold{
                     displayName = "Hold";
                     condition = "true";
                     statement = QUOTE(_this call FUNC(Halt); QUOTE("ace_gestures_hold") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
-                    //icon = QPATHTOF(img\SignalHalt.paa);
+                    icon = QPATHTOF(img\SignalHalt.paa);
                 };
                 class ace_gestures_Freeze{
                     displayName = "Freeze";
                     condition = "true";
                     statement = QUOTE(_this call FUNC(Freeze); QUOTE("ace_gestures_freeze") call ace_gestures_fnc_playSignal);
                     showDisabled = 0;
-                    //icon = QPATHTOF(img\SignalFreeze.paa);
+                    icon = QPATHTOF(img\SignalFreeze.paa);
                 };
                 class Signal_formations{
                     displayName = "Formations";
@@ -143,21 +143,21 @@ class CfgVehicles
                         condition = "true";
                         statement = QUOTE(_this call FUNC(StaggeredColumn));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\FormationStaggeredColumn.paa);
+                        icon = QPATHTOF(img\FormationStaggeredColumn.paa);
                     };
                     class formation_Column{
                         displayName = "Column";
                         condition = "true";
                         statement = QUOTE(_this call FUNC(Column));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\FormationColumn.paa);
+                        icon = QPATHTOF(img\FormationColumn.paa);
                     };
                     class fromation_Herringbone{
                         displayName = "Herringbone";
                         condition = "true";
                         statement = QUOTE(_this call FUNC(Herringbone));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\FormationHerringbone.paa);
+                        icon = QPATHTOF(img\FormationHerringbone.paa);
                     };
                 };
                 class Signal_forward {
@@ -203,6 +203,12 @@ class CfgVehicles
                     condition = "false";
                 };
                 class ace_gestures_Forward{
+                    condition = "false";
+                };
+                class ace_gestures_Warning{
+                    condition = "false";
+                };
+                class ace_gestures_Stop{
                     condition = "false";
                 };
             };

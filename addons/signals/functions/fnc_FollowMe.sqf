@@ -25,7 +25,7 @@ private _nearPlayers = allPlayers select {
 };
 
 {
-    [_text, QPATHTOF(img\SignalDisperse.paa), [1, 1, 1], _x, 2] call ace_common_fnc_displayTextPicture;
+    [_text, QPATHTOF(img\SignalFollow.paa), [1, 1, 1], _x, 2] call ace_common_fnc_displayTextPicture;
 } forEach _nearPlayers;
 
 [ARR_2(_player,'gestureFollow')] call ace_common_fnc_doGesture;

@@ -25,5 +25,5 @@ private _nearPlayers = allPlayers select {
 };
 
 {
-    [_text, QPATHTOF(img\FormationVee.paa), [1, 1, 1], _x, 2] call ace_common_fnc_displayTextPicture;
+    [_text, QPATHTOF(img\FormationHerringbone.paa), [1, 1, 1], _x, 2] call ace_common_fnc_displayTextPicture;
 } forEach _nearPlayers;
