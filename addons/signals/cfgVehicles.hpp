@@ -1,52 +1,10 @@
-class CfgVehicles
-{
+class CfgVehicles {
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
             class ACE_gestures {
                 displayName = "Signals";
-                class signal_Disperse {
-                    displayName = "Disperse";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(Disperse));
-                    showDisabled = 0;
-                    icon = QPATHTOF(img\SignalDisperse.paa);
-                };
-                class ace_gestures_Regroup {
-                    displayName = "Rally";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(Rally); QUOTE("ace_gestures_regroup") call ace_gestures_fnc_playSignal);
-                    showDisabled = 0;
-                    icon = QPATHTOF(img\SignalRally.paa);
-                };
-                class ace_gestures_Follow {
-                    displayName = "Follow Me";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(FollowMe));
-                    showDisabled = 0;
-                    icon = QPATHTOF(img\SignalFollow.paa);
-                };
-                class ace_gestures_Go {
-                    displayName = "Attack";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(Attack));
-                    showDisabled = 0;
-                    icon = QPATHTOF(img\SignalAttack.paa);
-                };
-                class ace_gestures_Engage{
-                    displayName = "Engage";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(Engage); QUOTE("ace_gestures_engage") call ace_gestures_fnc_playSignal);
-                    showDisabled = 0;
-                    icon = QPATHTOF(img\SignalEngage.paa);
-                };
-                class ace_gestures_CeaseFire{
-                    displayName = "Cease Fire";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(HoldFire));
-                    showDisabled = 0;
-                    icon = QPATHTOF(img\SignalHoldFire.paa);
-                };
+                
            /*     class signal_contact {
                     displayName = "Contact";
                     condition = QGVAR(enableSignals);
@@ -68,40 +26,91 @@ class CfgVehicles
                         //icon = QPATHTOF(img\SignalContactRight.paa);
                     };
                 };*/
-                class ace_gestures_Point{
-                    displayName = "Enemy Spotted";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(EnemySpotted); QUOTE("ace_gestures_point") call ace_gestures_fnc_playSignal);
+                class Signal_forward {
+                    displayName = "Call somebody";
+                    condition = QGVAR(enableSignals);
+                    statement = "hintSilent ''";
+                    //icon = QPATHTOF(img\SignalIcon256x256.paa);
+                    priority = 2.6;
                     showDisabled = 0;
-                    icon = QPATHTOF(img\SignalEnemySpotted.paa);
+                    class forward_rto{
+                        displayName = "RTO forward";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(RTOForward));
+                        showDisabled = 0;
+                        //icon = QPATHTOF(img\RTOForward.paa);
+                    };
+                    class forward_PL{
+                        displayName = "PL forward";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(PLForward));
+                        showDisabled = 0;
+                        //icon = QPATHTOF(img\PLForward.paa);
+                    };
+                    class forward_PSgt{
+                        displayName = "PSG forward";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(PSgtForward));
+                        showDisabled = 0;
+                        //icon = QPATHTOF(img\PSgtForward.paa);
+                    };
+                    class forward_medic{
+                        displayName = "Medic forward";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(MedicForward));
+                        showDisabled = 0;
+                        //icon = QPATHTOF(img\MedicForward.paa);
+                    };
                 };
-                class ace_gestures_Cover{
-                    displayName = "Take Cover";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(TakeCover); QUOTE("ace_gestures_cover") call ace_gestures_fnc_playSignal);
+                class Signal_move{
+                    displayName = "Movement";
+                    condition = QGVAR(enableSignals);
+                    statement = "hintSilent ''";
+                    //icon = QPATHTOF(img\SignalIcon256x256.paa);
+                    priority = 2.3;
                     showDisabled = 0;
-                    icon = QPATHTOF(img\SignalTakeCover.paa);
-                };
-                class ace_gestures_Hold{
-                    displayName = "Hold";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(Halt); QUOTE("ace_gestures_hold") call ace_gestures_fnc_playSignal);
-                    showDisabled = 0;
-                    icon = QPATHTOF(img\SignalHalt.paa);
-                };
-                class ace_gestures_Freeze{
-                    displayName = "Freeze";
-                    condition = "true";
-                    statement = QUOTE(_this call FUNC(Freeze); QUOTE("ace_gestures_freeze") call ace_gestures_fnc_playSignal);
-                    showDisabled = 0;
-                    icon = QPATHTOF(img\SignalFreeze.paa);
+                    class Move_stop{
+                        displayName = "Stop";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(Halt); QUOTE("ace_gestures_hold") call ace_gestures_fnc_playSignal);
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\SignalHalt.paa);
+                    };
+                    class Move_left{
+                        displayName = "Move Left";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(MoveLeft));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\MoveLeft.paa);
+                    };
+                    class Move_right{
+                        displayName = "Move Right";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(MoveRight));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\MoveRight.paa);
+                    };
+                    class Move_backward{
+                        displayName = "Move Backward";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(MoveBackward));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\MoveBackward.paa);
+                    };
+                    class ace_gestures_Advance{
+                        displayName = "Advance";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(Advance); [ARR_2(_target,'gestureAdvance')] call ace_common_fnc_doGesture);
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\MoveAdvance.paa);
+                    };
                 };
                 class Signal_formations{
                     displayName = "Formations";
                     condition = QGVAR(enableSignals);
                     statement = "hintSilent ''";
                     //icon = QPATHTOF(img\SignalIcon256x256.paa);
-                    priority = 2.6;
+                    priority = 2.3;
                     showDisabled = 0;
                     class formation_Wedge{
                         displayName = "Wedge";
@@ -160,40 +169,82 @@ class CfgVehicles
                         icon = QPATHTOF(img\FormationHerringbone.paa);
                     };
                 };
-                class Signal_forward {
-                    displayName = "Move smb forward";
+                class signals_basic {
+                    displayName = "Basic Signals";
                     condition = QGVAR(enableSignals);
                     statement = "hintSilent ''";
                     //icon = QPATHTOF(img\SignalIcon256x256.paa);
-                    priority = 2.6;
+                    priority = 2.1;
                     showDisabled = 0;
-                    class forward_rto{
-                        displayName = "RTO forward";
+                    class signal_Disperse {
+                        displayName = "Disperse";
                         condition = "true";
-                        statement = QUOTE(_this call FUNC(RTOForward));
+                        statement = QUOTE(_this call FUNC(Disperse));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\RTOForward.paa);
+                        icon = QPATHTOF(img\SignalDisperse.paa);
                     };
-                    class forward_PL{
-                        displayName = "PL forward";
+                    class ace_gestures_Regroup {
+                        displayName = "Rally";
                         condition = "true";
-                        statement = QUOTE(_this call FUNC(PLForward));
+                        statement = QUOTE(_this call FUNC(Rally); QUOTE("ace_gestures_regroup") call ace_gestures_fnc_playSignal);
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\PLForward.paa);
+                        icon = QPATHTOF(img\SignalRally.paa);
                     };
-                    class forward_PSgt{
-                        displayName = "PSG forward";
+                    class ace_gestures_Follow {
+                        displayName = "Follow Me";
                         condition = "true";
-                        statement = QUOTE(_this call FUNC(PSgtForward));
+                        statement = QUOTE(_this call FUNC(FollowMe));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\PSgtForward.paa);
+                        icon = QPATHTOF(img\SignalFollow.paa);
                     };
-                    class forward_medic{
-                        displayName = "Medic forward";
+                    class ace_gestures_Go {
+                        displayName = "Attack";
                         condition = "true";
-                        statement = QUOTE(_this call FUNC(MedicForward));
+                        statement = QUOTE(_this call FUNC(Attack));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\MedicForward.paa);
+                        icon = QPATHTOF(img\SignalAttack.paa);
+                    };
+                    class ace_gestures_Engage{
+                        displayName = "Engage";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(Engage); QUOTE("ace_gestures_engage") call ace_gestures_fnc_playSignal);
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\SignalEngage.paa);
+                    };
+                    class ace_gestures_CeaseFire{
+                        displayName = "Cease Fire";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(HoldFire));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\SignalHoldFire.paa);
+                    };
+                    class ace_gestures_Point{
+                        displayName = "Enemy Spotted";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(EnemySpotted); QUOTE("ace_gestures_point") call ace_gestures_fnc_playSignal);
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\SignalEnemySpotted.paa);
+                    };
+                    class ace_gestures_Cover{
+                        displayName = "Take Cover";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(TakeCover); QUOTE("ace_gestures_cover") call ace_gestures_fnc_playSignal);
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\SignalTakeCover.paa);
+                    };
+                    class ace_gestures_Hold{
+                        displayName = "Hold";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(Halt); QUOTE("ace_gestures_hold") call ace_gestures_fnc_playSignal);
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\SignalHalt.paa);
+                    };
+                    class ace_gestures_Freeze{
+                        displayName = "Freeze";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(Freeze); QUOTE("ace_gestures_freeze") call ace_gestures_fnc_playSignal);
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\SignalFreeze.paa);
                     };
                 };
                 class ace_gestures_Advance{
@@ -209,6 +260,33 @@ class CfgVehicles
                     condition = "false";
                 };
                 class ace_gestures_Stop{
+                    condition = "false";
+                };
+                class ace_gestures_Regroup {
+                    condition = "false";
+                };
+                class ace_gestures_Follow {
+                    condition = "false";
+                };
+                class ace_gestures_Go {
+                    condition = "false";
+                };  
+                class ace_gestures_Engage{
+                    condition = "false";
+                };
+                class ace_gestures_CeaseFire{
+                    condition = "false";
+                };
+                class ace_gestures_Point{
+                    condition = "false";
+                };
+                class ace_gestures_Cover{
+                    condition = "false";
+                };
+                class ace_gestures_Hold{
+                    condition = "false";
+                };
+                class ace_gestures_Freeze{
                     condition = "false";
                 };
             };

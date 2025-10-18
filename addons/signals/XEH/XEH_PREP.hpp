@@ -23,3 +23,7 @@ PREP(MedicForward);
 PREP(TakeCover);
 PREP(Engage);
 PREP(HoldFire);
+PREP(MoveLeft);
+PREP(MoveRight);
+PREP(MoveBackward);
+PREP(Advance);
