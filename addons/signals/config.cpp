@@ -33,3 +33,4 @@ class CfgPatches {
 
 #include "XEH\CfgXEH.hpp"
 #include "cfgVehicles.hpp"
+#include "RscTitles.hpp"
