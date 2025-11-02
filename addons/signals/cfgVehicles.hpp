@@ -26,6 +26,84 @@ class CfgVehicles {
                         //icon = QPATHTOF(img\SignalContactRight.paa);
                     };
                 };*/
+                class Signal_numbers{
+                    displayName = "Numbers";
+                    condition = QGVAR(enableSignals);
+                    statement = "hintSilent ''";
+                    //icon = QPATHTOF(img\SignalIcon256x256.paa);
+                    priority = 2.6;
+                    showDisabled = 0;
+                    class number_one{
+                        displayName = "Number One";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberOne));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberOne.paa);
+                    };
+                    class number_two{
+                        displayName = "Number Two";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberTwo));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberTwo.paa);
+                    };
+                    class number_three{
+                        displayName = "Number Three";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberThree));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberThree.paa);
+                    };
+                    class number_four{
+                        displayName = "Number Four";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberFour));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberFour.paa);
+                    };
+                    class number_five{
+                        displayName = "Number Five";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberFive));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberFive.paa);
+                    };
+                    class number_six{
+                        displayName = "Number Six";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberSix));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberSix.paa);
+                    };
+                    class number_seven{
+                        displayName = "Number Seven";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberSeven));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberSeven.paa);
+                    };
+                    class number_eight{
+                        displayName = "Number Eight";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberEight));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberEight.paa);
+                    };
+                    class number_nine{
+                        displayName = "Number Nine";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberNine));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberNine.paa);
+                    };
+                    class number_zero{
+                        displayName = "Number Zero";
+                        condition = "true";
+                        statement = QUOTE(_this call FUNC(NumberZero));
+                        showDisabled = 0;
+                        icon = QPATHTOF(img\NumberZero.paa);
+                    };
+                };
                 class Signal_forward {
                     displayName = "Call somebody";
                     condition = QGVAR(enableSignals);
@@ -38,28 +116,28 @@ class CfgVehicles {
                         condition = "true";
                         statement = QUOTE(_this call FUNC(RTOForward));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\RTOForward.paa);
+                        icon = QPATHTOF(img\RTOForward.paa);
                     };
                     class forward_PL{
                         displayName = "PL forward";
                         condition = "true";
                         statement = QUOTE(_this call FUNC(PLForward));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\PLForward.paa);
+                        icon = QPATHTOF(img\PLForward.paa);
                     };
                     class forward_PSgt{
                         displayName = "PSG forward";
                         condition = "true";
                         statement = QUOTE(_this call FUNC(PSgtForward));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\PSgtForward.paa);
+                        icon = QPATHTOF(img\PSgtForward.paa);
                     };
                     class forward_medic{
                         displayName = "Medic forward";
                         condition = "true";
                         statement = QUOTE(_this call FUNC(MedicForward));
                         showDisabled = 0;
-                        //icon = QPATHTOF(img\MedicForward.paa);
+                        icon = QPATHTOF(img\MedicForward.paa);
                     };
                 };
                 class Signal_move{
@@ -72,7 +150,7 @@ class CfgVehicles {
                     class Move_stop{
                         displayName = "Stop";
                         condition = "true";
-                        statement = QUOTE(_this call FUNC(Halt); QUOTE("ace_gestures_hold") call ace_gestures_fnc_playSignal);
+                        statement = QUOTE(_this call FUNC(Halt););
                         showDisabled = 0;
                         icon = QPATHTOF(img\SignalHalt.paa);
                     };

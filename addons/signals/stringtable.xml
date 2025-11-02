@@ -20,6 +20,12 @@
             <Key ID="STR_kolmi_signals_setting_string_DISTANCE_DISC">
                 <English>Distance at signals wll be shown</English>
             </Key>
+            <Key ID="STR_kolmi_signals_setting_string_KEY">
+                <English>Key which will show signal circle</English>
+            </Key>
+            <Key ID="STR_kolmi_signals_setting_string_KEY_DISC">
+                <English>Set the key which will show signal circle</English>
+            </Key>
         </Container>
         
     </Package>

@@ -42,6 +42,10 @@
 #define QPVAR(var1) QUOTE(PVAR(var1))
 #define QQPVAR(var1) QUOTE(QPVAR(var1))
 
+//acefunc
+#define ACEFUNC(module,function)    TRIPLES(DOUBLES(ACE_PREFIX,module),fnc,function)
+#define QACEFUNC(module,function)   QUOTE(ACEFUNC(module,function))
+
 // Component Variables
 #define CVAR(var1) DOUBLES(COMPONENT,var1)
 #define QCVAR(var1) QUOTE(CVAR(var1))

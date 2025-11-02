@@ -19,7 +19,7 @@ params ["_player"];
 
 private _playerName = [_player, false, true] call ace_common_fnc_getName;  
 private _text = format["HOLD <br/><t size='0.7'>%1</t>", _playerName];
-
+"ace_gestures_hold" call ace_gestures_fnc_playSignal;
 private _nearPlayers = allPlayers select {
     _x distance _player <= GVAR(signalDistance)
 };
